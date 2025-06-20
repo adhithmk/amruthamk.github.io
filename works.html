@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Works | Dr Amrutha M K</title>
+  <meta name="description" content="A showcase of Dr. Amrutha M K's projects, research works, and academic contributions.">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-white text-gray-800">
+  <nav class="fixed top-0 w-full bg-white shadow-md z-50">
+    <div class="container mx-auto flex items-center justify-between px-6 py-4">
+      <a href="/" class="text-2xl font-bold text-indigo-600 hover:text-indigo-700 transition-colors">Dr Amrutha M K</a>
+      <ul class="hidden md:flex space-x-8 text-gray-700 font-medium">
+        <li><a href="/about.html" class="hover:text-indigo-600 transition-colors">About</a></li>
+        <li><a href="/publications.html" class="hover:text-indigo-600 transition-colors">Publications</a></li>
+        <li><a href="/blog/" class="hover:text-indigo-600 transition-colors">Blog</a></li>
+        <li><a href="/works.html" class="text-indigo-600 font-semibold">Works</a></li>
+        <li><a href="/contact.html" class="hover:text-indigo-600 transition-colors">Contact</a></li>
+      </ul>
+      <button id="menu-toggle" class="md:hidden focus:outline-none">
+        <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <main class="pt-24">
+    <!-- Hero -->
+    <section class="bg-gradient-to-r from-indigo-50 to-blue-50 py-16">
+      <div class="max-w-6xl mx-auto px-6 text-center">
+        <span class="inline-block bg-indigo-100 text-indigo-800 text-sm font-medium px-3 py-1 rounded-full mb-4">Portfolio</span>
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Featured Works</h1>
+        <div class="w-20 h-1 bg-indigo-600 mx-auto mb-6"></div>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          A curated collection of my research projects, academic works, and professional contributions
+        </p>
+      </div>
+    </section>
+
+<div class="container mx-auto px-4 py-16">
+    <div class="max-w-6xl mx-auto">
+
+        <!-- Filter Controls -->
+        <div class="mb-16">
+            <div class="flex flex-wrap justify-center gap-3 mb-8">
+                <button class="filter-btn active px-5 py-2.5 rounded-full bg-indigo-600 text-white text-sm font-medium shadow-sm hover:shadow-md transition-all duration-200" data-filter="all">
+                    All Works
+                </button>
+                <button class="filter-btn px-5 py-2.5 rounded-full bg-white text-gray-700 border border-gray-200 text-sm font-medium shadow-sm hover:bg-gray-50 hover:shadow-md transition-all duration-200" data-filter="research">
+                    Research Projects
+                </button>
+                <button class="filter-btn px-5 py-2.5 rounded-full bg-white text-gray-700 border border-gray-200 text-sm font-medium shadow-sm hover:bg-gray-50 hover:shadow-md transition-all duration-200" data-filter="publications">
+                    Publications
+                </button>
+                <button class="filter-btn px-5 py-2.5 rounded-full bg-white text-gray-700 border border-gray-200 text-sm font-medium shadow-sm hover:bg-gray-50 hover:shadow-md transition-all duration-200" data-filter="teaching">
+                    Teaching Materials
+                </button>
+                <button class="filter-btn px-5 py-2.5 rounded-full bg-white text-gray-700 border border-gray-200 text-sm font-medium shadow-sm hover:bg-gray-50 hover:shadow-md transition-all duration-200" data-filter="digital">
+                    Digital Projects
+                </button>
+                <button class="filter-btn px-5 py-2.5 rounded-full bg-white text-gray-700 border border-gray-200 text-sm font-medium shadow-sm hover:bg-gray-50 hover:shadow-md transition-all duration-200" data-filter="media">
+                    Media Coverage
+                </button>
+            </div>
+
+            <div class="flex justify-center px-4">
+                <div class="relative w-full max-w-2xl">
+                    <div class="relative">
+                        <input type="text" id="search-works" 
+                               class="w-full px-5 py-3 pl-12 pr-5 rounded-lg border border-gray-200 focus:ring-2 focus:ring-indigo-500 focus:border-transparent shadow-sm transition-all duration-200"
+                               placeholder="Search works by title, description, or tags...">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Works Grid -->
+        <div id="works-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Works will be loaded here by JavaScript -->
+            <div class="text-center py-20">
+                <div class="inline-flex items-center space-x-3">
+                    <div class="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-indigo-600"></div>
+                    <span class="text-gray-600 font-medium">Loading works...</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- No Results Message (initially hidden) -->
+        <div id="no-works-found" class="hidden text-center py-20">
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-indigo-100 text-indigo-600 mb-4">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </div>
+      </div>
+    </div>
+    
+
+  </main>
+
+  <!-- Work Item Modal -->
+  <div id="work-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-white rounded-xl shadow-2xl max-w-5xl w-full my-8 mx-auto relative max-h-[90vh] flex flex-col">
+      <div class="sticky top-0 bg-white z-10 border-b border-gray-200 p-4 flex justify-between items-center">
+        <h3 id="modal-title" class="text-2xl font-bold text-gray-900"></h3>
+        <button id="close-modal" class="text-gray-400 hover:text-gray-600 transition-colors p-2 -mr-2">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="p-6 overflow-y-auto flex-grow">
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="space-y-6">
+            <div id="modal-image" class="bg-gray-100 rounded-lg overflow-hidden">
+              <!-- Image will be inserted here -->
+            </div>
+            <div id="modal-tags" class="flex flex-wrap gap-2">
+              <!-- Tags will be inserted here -->
+            </div>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold text-gray-900 mb-2">Project Details</h4>
+            <div id="modal-details" class="space-y-4 text-gray-600">
+              <!-- Details will be inserted here -->
+            </div>
+            <div id="modal-links" class="mt-6 pt-6 border-t border-gray-200">
+              <h4 class="text-lg font-semibold text-gray-900 mb-3">Links & Resources</h4>
+              <div class="space-y-2">
+                <!-- Links will be inserted here -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-gray-100 py-8 mt-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="text-center md:text-left mb-4 md:mb-0">
+          <p class="text-gray-600"> 2023 Dr. Amrutha M K. All rights reserved.</p>
+        </div>
+        <div class="flex space-x-4">
+          <a href="#" class="text-gray-600 hover:text-indigo-600 transition-colors">Email</a>
+          <a href="#" class="text-gray-600 hover:text-indigo-600 transition-colors">LinkedIn</a>
+          <a href="#" class="text-gray-600 hover:text-indigo-600 transition-colors">Google Scholar</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+      const menu = document.querySelector('nav ul');
+      menu.classList.toggle('hidden');
+      menu.classList.toggle('block');
+    });
+  </script>
+  <script src="/assets/js/works.js"></script>
+</body>
+</html>

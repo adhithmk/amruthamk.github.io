@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr Amrutha M K | Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+    
+    :root {
+      --primary: #4F46E5;
+      --primary-dark: #4338CA;
+      --accent: #7C3AED;
+      --gray-50: #F9FAFB;
+      --gray-100: #F3F4F6;
+      --gray-900: #111827;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #1F2937;
+      line-height: 1.6;
+      background-color: var(--gray-50);
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: var(--gray-900);
+    }
+    
+    h1 {
+      font-size: 3.5rem;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(90deg, #1E3A8A 0%, #4338CA 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    p {
+      font-size: 1.125rem;
+      line-height: 1.7;
+      color: #4B5563;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+      color: white;
+      font-weight: 500;
+      font-size: 0.875rem;
+      padding: 0.5rem 1.25rem;
+      border-radius: 0.375rem;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      box-shadow: 0 2px 4px -1px rgba(79, 70, 229, 0.2);
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.2);
+    }
+    
+    .btn-outline {
+      border: 1.5px solid var(--primary);
+      color: var(--primary);
+      background: transparent;
+      font-size: 0.875rem;
+      padding: 0.5rem 1.25rem;
+      border-radius: 0.375rem;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+    }
+    
+    .btn-outline:hover {
+      background: rgba(79, 70, 229, 0.05);
+      transform: translateY(-1px);
+    }
+    
+    .profile-container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background-image: 
+        radial-gradient(circle at 1px 1px, #E5E7EB 1px, transparent 0);
+      background-size: 24px 24px;
+    }
+    
+    .profile-image {
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .profile-image:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 35px 60px -15px rgba(0, 0, 0, 0.15);
+    }
+    
+    .profile-image img {
+      transition: transform 0.6s ease;
+    }
+    
+    .profile-image:hover img {
+      transform: scale(1.03);
+    }
+    
+    .nav-link {
+      position: relative;
+      transition: color 0.2s ease;
+    }
+    
+    .nav-link:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover:after {
+      width: 100%;
+    }
+    
+    .mobile-menu {
+      display: none;
+    }
+    
+    .mobile-menu.active {
+      display: block;
+    }
+    
+    /* Card hover effect */
+    .card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 
+                  0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    
+    @media (max-width: 1024px) {
+      h1 {
+        font-size: 2.75rem;
+      }
+      
+      h2 {
+        font-size: 2.25rem;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.25rem;
+      }
+      
+      h2 {
+        font-size: 1.875rem;
+      }
+      
+      p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+  <!-- Navigation -->
+  <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-sm z-50 shadow-sm">
+    <div class="container mx-auto px-6 py-4">
+      <div class="flex items-center justify-between">
+        <a href="/" class="text-2xl font-bold text-gray-900 hover:text-indigo-600 transition-colors">Dr. Amrutha M K</a>
+        
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex space-x-8">
+          <a href="/about.html" class="nav-link text-gray-700 hover:text-indigo-600">About</a>
+          <a href="/publications.html" class="nav-link text-gray-700 hover:text-indigo-600">Publications</a>
+          <a href="/blog/" class="nav-link text-gray-700 hover:text-indigo-600">Blog</a>
+          <a href="/works.html" class="nav-link text-gray-700 hover:text-indigo-600">Works</a>
+          <a href="/contact.html" class="nav-link text-gray-700 hover:text-indigo-600">Contact</a>
+        </div>
+        
+        <!-- Mobile menu button -->
+        <button id="menu-toggle" class="md:hidden focus:outline-none" aria-label="Toggle menu">
+          <svg class="w-8 h-8 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+          </svg>
+        </button>
+      </div>
+      
+      <!-- Mobile Navigation -->
+      <div id="mobile-menu" class="mobile-menu mt-4 md:hidden hidden">
+        <div class="flex flex-col space-y-3 py-4 border-t border-gray-200">
+          <a href="/about.html" class="block py-2 text-gray-700 hover:text-indigo-600">About</a>
+          <a href="/publications.html" class="block py-2 text-gray-700 hover:text-indigo-600">Publications</a>
+          <a href="/blog/" class="block py-2 text-gray-700 hover:text-indigo-600">Blog</a>
+          <a href="/works.html" class="block py-2 text-gray-700 hover:text-indigo-600">Works</a>
+          <a href="/contact.html" class="block py-2 text-gray-700 hover:text-indigo-600">Contact</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="flex-grow pt-24 pb-16">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
+        <!-- Profile Image -->
+        <div class="lg:w-5/12 xl:w-2/5 flex justify-center">
+          <div class="relative">
+            <div class="profile-image w-64 h-80 md:w-80 md:h-96 lg:w-96 lg:h-[32rem]">
+              <img 
+                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80" 
+                alt="Dr. Amrutha M K - Professional Portrait" 
+                class="w-full h-full object-cover"
+                loading="lazy"
+              >
+            </div>
+          </div>
+        </div>
+        
+        <!-- Profile Content -->
+        <div class="lg:w-7/12 xl:w-3/5">
+          <div class="max-w-2xl">
+            <h1>
+              Dr. Amrutha M K
+            </h1>
+            
+            <div class="mb-8">
+              <p class="text-xl md:text-2xl font-light mb-6 text-gray-600">
+                Assistant Professor of English | Digital Humanities Researcher | Interdisciplinary Scholar
+              </p>
+              
+              <div class="space-y-4 text-base md:text-lg">
+                <p>
+                  Welcome to my academic portfolio. I am passionate about exploring the intersections of literature, 
+                  culture, and technology through the lens of digital humanities.
+                </p>
+                <p>
+                  My research focuses on developing innovative methodologies that bridge traditional humanities scholarship 
+                  with digital tools and approaches, particularly in the context of South Asian literary and performance traditions.
+                </p>
+                <p>
+                  Through my work, I aim to demonstrate how digital technologies can enhance our understanding of cultural 
+                  heritage and create new possibilities for scholarly engagement with traditional texts and performances.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+    </div>
+  </main>
+
+  <!-- Research Section with Image Grid -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-6">
+      <h2 class="text-center mb-6">Research & Academic Work</h2>
+      
+      <!-- Filter Buttons -->
+      <div class="flex flex-wrap justify-center gap-3 mb-8">
+        <button class="filter-btn px-5 py-2.5 rounded-full bg-indigo-600 text-white text-sm font-medium shadow-sm hover:shadow-md transition-all duration-200" data-filter="all">
+          All Work
+        </button>
+        <button class="filter-btn px-5 py-2.5 rounded-full bg-white text-gray-700 border border-gray-200 text-sm font-medium shadow-sm hover:bg-gray-50 hover:shadow-md transition-all duration-200" data-filter="collaboration">
+          Collaboration
+        </button>
+        <button class="filter-btn px-5 py-2.5 rounded-full bg-white text-gray-700 border border-gray-200 text-sm font-medium shadow-sm hover:bg-gray-50 hover:shadow-md transition-all duration-200" data-filter="research">
+          Research
+        </button>
+        <button class="filter-btn px-5 py-2.5 rounded-full bg-white text-gray-700 border border-gray-200 text-sm font-medium shadow-sm hover:bg-gray-50 hover:shadow-md transition-all duration-200" data-filter="teaching">
+          Teaching
+        </button>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="publication-item" data-category="collaboration">
+          <div class="publication-image">
+            <img 
+              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80" 
+              alt="Academic Collaboration" 
+              loading="lazy"
+            >
+          </div>
+          <div class="publication-content">
+            <h3>Academic Collaboration</h3>
+            <p class="publication-meta">Collaborative Research • 2023</p>
+            <p class="publication-description">Engaging in interdisciplinary research and academic partnerships to drive innovation in digital humanities.</p>
+            <div class="publication-tags">
+              <span class="publication-tag">Digital Humanities</span>
+              <span class="publication-tag">Research</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="publication-item" data-category="research">
+          <div class="publication-image">
+            <img 
+              src="https://images.unsplash.com/photo-1454165804606-c3b57d1f0db9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+              alt="Research & Analysis" 
+              loading="lazy"
+            >
+          </div>
+          <div class="publication-content">
+            <h3>Research & Analysis</h3>
+            <p class="publication-meta">Journal Article • 2023</p>
+            <p class="publication-description">In-depth exploration of literary and cultural studies through the lens of digital methodologies.</p>
+            <div class="publication-tags">
+              <span class="publication-tag">Analysis</span>
+              <span class="publication-tag">Methodology</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="publication-item" data-category="teaching">
+          <div class="publication-image">
+            <img 
+              src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1122&q=80" 
+              alt="Classroom Teaching" 
+              loading="lazy"
+            >
+          </div>
+          <div class="publication-content">
+            <h3>Classroom Teaching</h3>
+            <p class="publication-meta">Education • 2023</p>
+            <p class="publication-description">Engaging students in critical thinking and analysis through innovative teaching methodologies.</p>
+            <div class="publication-tags">
+              <span class="publication-tag">Education</span>
+              <span class="publication-tag">Pedagogy</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-white border-t border-gray-100 py-8">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="text-center md:text-left mb-4 md:mb-0">
+          <p class="text-sm text-gray-500">© 2025 Dr. Amrutha M K. All rights reserved.</p>
+        </div>
+        <div class="flex space-x-6">
+          <a href="mailto:contact@amruthamk.com" class="text-gray-400 hover:text-indigo-600 transition-colors">
+            <span class="sr-only">Email</span>
+            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+            </svg>
+          </a>
+          <a href="https://linkedin.com/in/amrutha" class="text-gray-400 hover:text-indigo-600 transition-colors">
+            <span class="sr-only">LinkedIn</span>
+            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.202 1.778 3.202 4.092v4.711zM5.337 7.433c-.975 0-1.765-.79-1.765-1.766 0-.975.79-1.765 1.765-1.765.974 0 1.764.79 1.764 1.765 0 .976-.79 1.766-1.764 1.766zM3.666 16.338h3.333V8.005H3.666v8.333z" clip-rule="evenodd" />
+            </svg>
+          </a>
+          <a href="https://scholar.google.com/citations?user=USER_ID" class="text-gray-400 hover:text-indigo-600 transition-colors">
+            <span class="sr-only">Google Scholar</span>
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <style>
+    /* Publication Card Styles */
+    .publication-item {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      background: white;
+      overflow: hidden;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    }
+    
+    .publication-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    
+    .publication-item .publication-image {
+      height: 200px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .publication-item .publication-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .publication-item:hover .publication-image img {
+      transform: scale(1.05);
+    }
+    
+    .publication-content {
+      padding: 1.5rem;
+    }
+    
+    .publication-item h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #111827;
+      margin-bottom: 0.75rem;
+      line-height: 1.3;
+    }
+    
+    .publication-meta {
+      font-size: 0.875rem;
+      color: #6b7280;
+      margin-bottom: 1rem;
+    }
+    
+    .publication-journal {
+      color: #4f46e5;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    
+    .publication-year {
+      color: #9ca3af;
+    }
+    
+    .publication-description {
+      color: #4b5563;
+      margin-bottom: 1.25rem;
+      line-height: 1.6;
+    }
+    
+    .publication-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    
+    .publication-tag {
+      background-color: #eef2ff;
+      color: #4f46e5;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    
+    .publication-item:hover .publication-tag {
+      background-color: #e0e7ff;
+    }
+    
+    /* Custom cursor styles removed */
+  </style>
+  
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Mobile menu toggle
+      const menuToggle = document.getElementById('menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', function() {
+          mobileMenu.classList.toggle('active');
+          const expanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
+          menuToggle.setAttribute('aria-expanded', !expanded);
+        });
+      }
+      
+      // Publication filtering
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const publicationItems = document.querySelectorAll('.publication-item');
+      
+      filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          // Remove active class from all buttons
+          filterButtons.forEach(btn => {
+            btn.classList.remove('bg-indigo-600', 'text-white');
+            btn.classList.add('bg-white', 'text-gray-700', 'border');
+          });
+          
+          // Add active class to clicked button
+          button.classList.remove('bg-white', 'text-gray-700', 'border');
+          button.classList.add('bg-indigo-600', 'text-white');
+          
+          const filterValue = button.getAttribute('data-filter');
+          
+          // Show/hide publication items based on filter
+          publicationItems.forEach(item => {
+            if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+              item.style.display = 'block';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+      
+      // Initialize first filter as active
+      if (filterButtons.length > 0) {
+        filterButtons[0].click();
+      }
+      
+      // Cursor animation code removed
+    });
+  </script>
+</body>
+</html>

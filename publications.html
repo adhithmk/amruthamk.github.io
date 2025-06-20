@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Publications | Dr Amrutha M K</title>
+  <meta name="description" content="Research publications, articles, and academic works by Dr Amrutha M K">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-white text-gray-800">
+  <nav class="fixed top-0 w-full bg-white shadow-md z-50">
+    <div class="container mx-auto flex items-center justify-between px-6 py-4">
+      <a href="/" class="text-2xl font-bold text-indigo-600 hover:text-indigo-700 transition-colors">Dr Amrutha M K</a>
+      <ul class="hidden md:flex space-x-8 text-gray-700 font-medium">
+        <li><a href="/about.html" class="hover:text-indigo-600 transition-colors">About</a></li>
+        <li><a href="/publications.html" class="text-indigo-600 font-semibold">Publications</a></li>
+        <li><a href="/blog/" class="hover:text-indigo-600 transition-colors">Blog</a></li>
+        <li><a href="/works.html" class="hover:text-indigo-600 transition-colors">Works</a></li>
+        <li><a href="/contact.html" class="hover:text-indigo-600 transition-colors">Contact</a></li>
+      </ul>
+      <button id="menu-toggle" class="md:hidden focus:outline-none">
+        <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <main class="pt-24">
+    <!-- Hero -->
+    <section class="bg-gradient-to-r from-indigo-50 to-blue-50 py-16">
+      <div class="max-w-6xl mx-auto px-6 text-center">
+        <span class="inline-block bg-indigo-100 text-indigo-800 text-sm font-medium px-3 py-1 rounded-full mb-4">Research Output</span>
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Publications</h1>
+        <div class="w-20 h-1 bg-indigo-600 mx-auto mb-6"></div>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          A curated collection of my academic publications, research papers, and scholarly contributions
+        </p>
+      </div>
+    </section>
+
+<div class="container mx-auto px-4 py-16">
+    <div class="max-w-6xl mx-auto">
+
+        <!-- Filter Controls -->
+        <div class="mb-16">
+            <div class="flex flex-wrap justify-center gap-3 mb-8">
+                <button class="filter-btn active px-5 py-2.5 rounded-full bg-indigo-600 text-white text-sm font-medium shadow-sm hover:shadow-md transition-all duration-200" data-filter="all">
+                    All Publications
+                </button>
+                <button class="filter-btn px-5 py-2.5 rounded-full bg-white text-gray-700 border border-gray-200 text-sm font-medium shadow-sm hover:bg-gray-50 hover:shadow-md transition-all duration-200" data-filter="journal">
+                    Journal Articles
+                </button>
+                <button class="filter-btn px-5 py-2.5 rounded-full bg-white text-gray-700 border border-gray-200 text-sm font-medium shadow-sm hover:bg-gray-50 hover:shadow-md transition-all duration-200" data-filter="chapter">
+                    Book Chapters
+                </button>
+                <button class="filter-btn px-5 py-2.5 rounded-full bg-white text-gray-700 border border-gray-200 text-sm font-medium shadow-sm hover:bg-gray-50 hover:shadow-md transition-all duration-200" data-filter="conference">
+                    Conference Papers
+                </button>
+                <button class="filter-btn px-5 py-2.5 rounded-full bg-white text-gray-700 border border-gray-200 text-sm font-medium shadow-sm hover:bg-gray-50 hover:shadow-md transition-all duration-200" data-filter="media">
+                    Media & Interviews
+                </button>
+            </div>
+
+            <div class="flex justify-center px-4">
+                <div class="relative w-full max-w-2xl">
+                    <div class="relative">
+                        <input type="text" id="search-publications" 
+                               class="w-full px-5 py-3 pl-12 pr-5 rounded-lg border border-gray-200 focus:ring-2 focus:ring-indigo-500 focus:border-transparent shadow-sm transition-all duration-200"
+                               placeholder="Search publications by title, author, or keyword...">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Publications List -->
+        <div id="publications-container" class="space-y-8">
+            <!-- Publications will be dynamically loaded here -->
+            <div class="text-center py-20">
+                <div class="inline-flex items-center space-x-3">
+                    <div class="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-indigo-600"></div>
+                    <span class="text-gray-600 font-medium">Loading publications...</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- No Results Message (initially hidden) -->
+        <div id="no-results" class="hidden text-center py-20">
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-indigo-100 text-indigo-600 mb-4">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+            </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+  <footer class="bg-gray-100 py-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="text-center md:text-left mb-4 md:mb-0">
+          <p class="text-gray-600"> 2023 Dr. Amrutha M K. All rights reserved.</p>
+        </div>
+        <div class="flex space-x-4">
+          <a href="#" class="text-gray-600 hover:text-indigo-600 transition-colors">Email</a>
+          <a href="#" class="text-gray-600 hover:text-indigo-600 transition-colors">LinkedIn</a>
+          <a href="#" class="text-gray-600 hover:text-indigo-600 transition-colors">Google Scholar</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+      const menu = document.querySelector('nav ul');
+      menu.classList.toggle('hidden');
+      menu.classList.toggle('block');
+    });
+  </script>
+  <script src="/assets/js/publications.js"></script>
+</body>
+</html>
